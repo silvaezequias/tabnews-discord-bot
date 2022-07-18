@@ -13,7 +13,7 @@ function ExemploDeEstruturaDeComando(client, message){
   .setDescription('Uma incrível e tecnológica comunidade. [TabNews.com.br](https://tabnews.com.br)')
   .addField( 
     'Contribua conosco', 
-    'Você pode contribuir no projeto OpenSource desse Bot lá no github. [gh/tabnews-discord-bot](https://github.com/ezequiaslopesdasilva/tabnews-discord-bot)'
+    'Você pode contribuir no projeto OpenSource desse Bot lá no github. [tabnews-discord-bot](https://github.com/ezequiaslopesdasilva/tabnews-discord-bot)'
   )
   .setImage('https://i.imgur.com/D0Yz3Bw.png')
   .setColor('#4287f5');
