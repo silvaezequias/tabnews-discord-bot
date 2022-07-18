@@ -5,15 +5,9 @@ Pode ser usado também para enviar sugestões de melhorias ou features tanto par
 
 ### A seguir estão algumas ideias de avatares que eu fiz para o Bot:
 
-<img src="https://i.imgur.com/a0RyvAR.png" width="150">
-<img src="https://i.imgur.com/WiwUipE.png" width="150">
-<img src="https://i.imgur.com/g8VXTEr.png" width="150"><br>
-<img src="https://i.imgur.com/3RdnBQX.png" width="150">
-<img src="https://i.imgur.com/0ju8gK3.png" width="150">
-<img src="https://i.imgur.com/U2RuCxH.png" width="150"><br>
-<img src="https://i.imgur.com/OVxPRrx.png" width="150">
-<img src="https://i.imgur.com/AfDy31e.png" width="150">
-<img src="https://i.imgur.com/D0Yz3Bw.png" width="150">
+<img src="https://i.imgur.com/a0RyvAR.png" width="150"><img src="https://i.imgur.com/WiwUipE.png" width="150"><img src="https://i.imgur.com/g8VXTEr.png" width="150"><br>
+<img src="https://i.imgur.com/3RdnBQX.png" width="150"><img src="https://i.imgur.com/0ju8gK3.png" width="150"><img src="https://i.imgur.com/U2RuCxH.png" width="150"><br>
+<img src="https://i.imgur.com/OVxPRrx.png" width="150"><img src="https://i.imgur.com/AfDy31e.png" width="150"><img src="https://i.imgur.com/D0Yz3Bw.png" width="150">
 
 ## Como Contribuir
 
