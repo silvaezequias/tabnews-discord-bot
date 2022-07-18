@@ -1,4 +1,4 @@
-function MessageCreateEvent(client){
+function MessageCreationEvent(client){
   client.on('messageCreate', message => {
     if (message.author.bot) return;
 
@@ -13,5 +13,5 @@ function MessageCreateEvent(client){
 
 module.exports = {
   name: 'Evento de Mensagem',
-  run: MessageCreateEvent
+  run: MessageCreationEvent
 }
