@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "axios": "^0.27.2",
+    "discord.js": "^13.8.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "glob": "^8.0.3",
+    "node-fetch": "^3.2.8"
+  },
+  "scripts": {
+    "start": "nodemon index.cjs"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
