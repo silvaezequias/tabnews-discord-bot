@@ -1,7 +1,7 @@
 
 function BotReady(client){
   client.on('ready', () => {
-    client.user.setActivity('tabnews.com.br');
+    client.emit('changeStatus');
   });
 }
 
