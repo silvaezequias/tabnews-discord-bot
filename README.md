@@ -15,3 +15,4 @@ Esse projeto é totalmente open-source, então se você quiser contribuir de qua
 
 Se você não é muito bom com códigos backend mas mesmo assim deseja contribuir, pode enviar sugestões de comandos ou funções que você julga ser útil para o Bot.<br>
 Se estiver com qualquer dúvida em relação ao código, pode abrir uma issue e relatar sua dúvida lá.
+
