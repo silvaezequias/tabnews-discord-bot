@@ -1,6 +1,6 @@
 # TabNews Discord Bot
 
-Essa é uma iniciativa que tivemos de criar um Bot para o [Servidor do TabNews no Discord](https://discord.gg/Sj7kE4ZF) para ajudar os usuários do [tabnews.com.br](https://tabnews.com.br) e também tirar dúvidas frequentes dos membros.<br>
+Essa é uma iniciativa que tivemos de criar um Bot para o [Servidor do TabNews no Discord](https://discord.gg/aNyH9huE5x) para ajudar os usuários do [tabnews.com.br](https://tabnews.com.br) e também tirar dúvidas frequentes dos membros.<br>
 Pode ser usado também para enviar sugestões de melhorias ou features tanto para o próprio Bot quanto para o Site.
 
 ### A seguir estão algumas ideias de avatares que eu fiz para o Bot:
