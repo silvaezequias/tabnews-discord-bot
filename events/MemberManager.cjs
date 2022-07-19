@@ -25,7 +25,7 @@ function MemberLeft(client){
 
     const message_embed = new Discord.MessageEmbed()
     .setTitle('Até Mais!!')
-    .setDescription(`Tchal **${user.username}** :cry: Ficamos tristes que tenha realmente que sair!! Esperamos que volte algum dia.`)
+    .setDescription(`Tchau **${user.username}** :cry: Ficamos tristes que tenha realmente que sair!! Esperamos que volte algum dia.`)
     .setImage('https://i.imgur.com/B0LQpbA.png')
     .setTimestamp(new Date())
     .setColor('#bf3c37');
