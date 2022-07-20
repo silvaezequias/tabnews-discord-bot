@@ -7,8 +7,7 @@ const Http = require('http');
 const express_app = Express();
 const http_server = Http.createServer(express_app);
 const client = new Discord.Client({
-  intents: 32767,
-  partials: ['MESSAGE', 'REACTION'],
+  intents: 32767
 });
 
 Dotenv.config();
