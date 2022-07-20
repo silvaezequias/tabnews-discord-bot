@@ -8,7 +8,8 @@
     "node-fetch": "^3.2.8"
   },
   "scripts": {
-    "start": "node index.cjs"
+    "start": "node index.cjs",
+    "dev": "nodemon index.cjs"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
