@@ -7,20 +7,21 @@ const Http = require('http');
 const express_app = Express();
 const http_server = Http.createServer(express_app);
 const client = new Discord.Client({
-  intents: 32767
+  intents: 32767,
+  partials: ['MESSAGE', 'REACTION'],
 });
 
 Dotenv.config();
 client.commands = new Map();
 
-Glob.sync('./commands/**.cjs').forEach(command_path => {
+Glob.sync('./commands/**/**.cjs').forEach(command_path => {
   var command = require(command_path);
   command.names.forEach(name => {
     client.commands.set(name, command);
   });
 });
 
-Glob.sync('./events/**.cjs').forEach(event_path => {
+Glob.sync('./events/**/**.cjs').forEach(event_path => {
   var event = require(event_path);
   event.run(client);
 });
