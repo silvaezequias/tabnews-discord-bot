@@ -6,7 +6,7 @@ const {Client} = require('discord.js');
 
 const express_app = Express();
 const http_server = createServer(express_app);
-const client = new Client({intents: 79615});
+const client = new Client({intents: 112383});
 
 config();
 client.commands = new Map();
