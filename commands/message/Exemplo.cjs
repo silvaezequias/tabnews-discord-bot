@@ -1,7 +1,7 @@
-const Discord = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 
 function ExemploDeEstruturaDeComando(client, message) {
-  var message_embed = new Discord.MessageEmbed()
+  var message_embed = new MessageEmbed()
     .setTitle('TabNews')
     .setDescription('Uma incrível e tecnológica comunidade. [TabNews.com.br](https://tabnews.com.br)')
     .addField(
