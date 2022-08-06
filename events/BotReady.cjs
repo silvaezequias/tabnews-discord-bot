@@ -9,10 +9,7 @@ function BotReady(client){
     else { commands = client.application?.commands };
 
     client.slashs.forEach(command => {
-      commands?.create({
-        name: command.data.name,
-        description: command.data.description
-      });
+      commands?.create(command.data);
     })
 
     client.emit('changeStatus');
