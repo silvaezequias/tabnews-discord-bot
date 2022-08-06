@@ -3,8 +3,8 @@ var moment = require('moment');
 moment.locale('pt-BR');
 
 function SlashCommand(client, message) {
-  var user = message.options.getUser('usuário');
   var guild = message.guild;
+  var user = message.options.getUser('usuário');
   var member = guild?.members.cache.get(user?.id);
 
   var roles = member._roles.map(role => `<@&${role}>`);
