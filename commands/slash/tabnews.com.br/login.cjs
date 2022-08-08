@@ -3,7 +3,7 @@ const { MessageEmbed, Constants } = require('discord.js');
 const { Database } = require('secure-db');
 
 const DATABASE_TOKEN = process.env.SECURE_DB;
-const API_URL = 'https://www.tabnews.com.br/api/v1/';
+const API_URL = process.env.API_URL;
 
 async function getUserByToken(token){
   const response = await fetch(API_URL + 'user', {
@@ -69,7 +69,7 @@ async function SlashCommand(client, message) {
   var success_embed = new MessageEmbed()
   .setTitle('Usuário Conectado!')
   .setDescription(
-    `Bem-vindo(a) de volta **${await tab_user.username}**!\n` +
+    `Bem-vindo(a) de volta **${tab_user.username}**!\n` +
     `Seu login foi realizado com sucesso.`
   )
   .setFooter({ text: 'Não salvamos sua senha nem email' })
@@ -109,15 +109,13 @@ module.exports = {
     description: 'Faça login com sua conta do TabNews.',
     options: [
       {
-        name: 'email',
-        description: 'Insira eu email',
-        required: true,
+        name: 'email', required: true,
+        description: 'Insira seu email',
         type: Constants.ApplicationCommandOptionTypes.STRING
       },
       {
-        name: 'senha',
+        name: 'senha', required: true,
         description: 'Insira sua senha',
-        required: true,
         type: Constants.ApplicationCommandOptionTypes.STRING
       }
     ]
