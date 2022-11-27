@@ -1,7 +1,7 @@
 
 function ChangeStatus(client){
   client.on('changeStatus', () => {
-   var guild = client.guilds.cache.get("1046275621795418273")//('997643740581736530'); // Servidor TabNews
+   var guild = client.guilds.cache.get('997643740581736530'); // Servidor TabNews
     var guild_members_size = guild.memberCount;
 
     let status = [
