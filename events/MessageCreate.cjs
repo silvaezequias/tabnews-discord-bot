@@ -14,7 +14,7 @@ function MessageCreationEvent(client) {
     if (mention_regExp.test(message_arguments[0])) {
       var response_embed = new MessageEmbed()
         .setTitle('TabNew Bot')
-        .setDescription(`Olá, eu sou o Bot oficial desse servidor. Meu prefixo é \`${prefix}\` e para saber meus comandos use \`${prefix}comandos\`.`)
+        .setDescription(`Olá, eu sou o Bot oficial desse servidor. Para saber meus comandos use \`/comandos\`.`)
         .setTimestamp(new Date())
         .setColor('#4287f5');
       message.reply({
@@ -23,7 +23,6 @@ function MessageCreationEvent(client) {
       });
     }
 
-    requested_command?.run(client, message);
   });
 }
 

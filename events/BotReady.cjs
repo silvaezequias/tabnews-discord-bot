@@ -1,7 +1,7 @@
 
 function BotReady(client){
   client.on('ready', () => {
-    var guild_id = 997643740581736530;
+    var guild_id = 1046275621795418273//997643740581736530;
     var guild = client.guilds.cache.get(guild_id);
     var commands;
 
@@ -13,6 +13,7 @@ function BotReady(client){
     })
 
     client.emit('changeStatus');
+    console.log(`[DISCORD] ${client.user.tag} is online`);
   });
 };
 
