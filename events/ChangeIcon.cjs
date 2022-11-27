@@ -18,7 +18,7 @@ function ChangeIcon(client){
       client.user.setAvatar(randomIcon.path);
     }
     setIcons();
-    setInterval(() => setIcons(), 6000);
+    setInterval(() => setIcons(), 60000);
   });
 }
 
