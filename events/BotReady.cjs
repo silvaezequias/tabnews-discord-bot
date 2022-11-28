@@ -13,6 +13,7 @@ function BotReady(client){
     })
 
     client.emit('changeStatus');
+    console.log(`[DISCORD] ${client.user.tag} is online`);
   });
 };
 

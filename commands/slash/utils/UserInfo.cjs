@@ -36,8 +36,8 @@ function SlashCommand(client, message) {
         name: 'Registrou', inline: true,
         value: `\`${registeredAt.fromNow()}\` (${registeredAt.format('DD/MM/YY')})`
       },
-      { name: `Cargos [${roles.length}]`, value: roles.join(', ') },
-      { name: 'Permissões', value: permissions.slice(0, 15).join(', ') }
+      { name: `Cargos [${roles.length}]`, value: roles.join(', ') || "Sem Cargos" },
+      { name: 'Permissões', value: permissions.slice(0, 15).join(', ') || "Nenhuma"}
     );
     
   message.reply({

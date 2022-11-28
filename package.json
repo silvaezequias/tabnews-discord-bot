@@ -4,7 +4,6 @@
     "axios": "^0.27.2",
     "discord.js": "^13.9.1",
     "dotenv": "^16.0.1",
-    "express": "^4.18.1",
     "glob": "^8.0.3",
     "moment": "^2.29.4",
     "node-fetch": "^3.2.10",
@@ -13,8 +12,5 @@
   "scripts": {
     "start": "node index.cjs",
     "dev": "nodemon index.cjs"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.19"
   }
 }
