@@ -56,6 +56,17 @@ export default {
       });
     };
 
+    var userObject = await user.getOneById(interaction.user.id);
+
+    await user.update(interaction.user.id, {
+      userId: interaction.user.id,
+      tabnewsUser: {
+        id: loggedUser.id,
+        username: loggedUser.username,
+        session: userObject.tabnewsUser.session
+      }
+    });
+
     const successEmbed = new EmbedBuilder()
       .setAuthor({
         name: 'Usuário Conectado',
