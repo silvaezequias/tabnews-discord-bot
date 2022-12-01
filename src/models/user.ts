@@ -38,8 +38,17 @@ async function create(userObject: User & UserSchema) {
   return createdUser;
 }
 
+async function update(userId: string, userObject: UserSchema) {
+  var updatedUser = await database.user.update({
+    where: { userId },
+    data: userObject
+  });
+  return updatedUser;
+};
+
 export default {
   insertSession,
   getOneById,
   create,
+  update,
 }
