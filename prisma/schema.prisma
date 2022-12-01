@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+type Session {
+  id        String
+  token     String
+  expiresAt DateTime
+  createdAt DateTime
+  updatedAt DateTime
+}
+
+type TabNewsUser {
+  id       String?
+  username String?
+  session  Session?
+}
+
+model User {
+  id          String       @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String       @unique
+  tabnewsUser TabNewsUser?
+}
