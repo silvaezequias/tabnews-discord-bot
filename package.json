@@ -4,7 +4,7 @@
   "description": "Uma aplicação Discord para interagir com a API do TabNews",
   "main": "src/index.ts",
   "scripts": {
-    "start": "tsx src/index.ts",
+    "start": "npx tsx src/index.ts",
     "dev": "nodemon --exec \"tsx src/index.ts\" -e ts",
     "prisma:push": "npx prisma db push",
     "prisma:seed": "npx prisma db seed",
@@ -25,7 +25,6 @@
     "@types/express": "^4.17.14",
     "@types/glob": "^8.0.0",
     "prisma": "^4.6.1",
-    "tsx": "^3.12.1",
     "typescript": "^4.9.3"
   },
   "dependencies": {
@@ -37,6 +36,7 @@
     "glob": "^8.0.3",
     "moment": "^2.29.4",
     "node-fetch": "^3.3.0",
+    "tsx": "^3.12.1",
     "wait": "^0.4.2"
   },
   "prisma": {
