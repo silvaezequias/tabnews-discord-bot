@@ -5,7 +5,7 @@ import environment from 'infra/environment';
 export default {
   name: 'ready',
   run: (client) => {
-    if (!environment.isProduction()) return;
+    if (!environment.isProduction() || true) return;
 
     const avatarPaths: PathLike[] = [
       '../assets/angry-face.png',
