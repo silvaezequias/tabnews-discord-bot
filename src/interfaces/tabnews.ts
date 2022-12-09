@@ -40,6 +40,12 @@ export type User<Auth = false> = (
   Auth extends true ? AuthenticatedUser : BaseUser
 );
 
+export type ContentsRequestQuery = {
+  page?: number;
+  per_page?: number;
+  strategy?: 'new' | 'old' | 'relevant';
+}
+
 export type RequestError = {
   name?: string;
   message?: string;
@@ -50,7 +56,6 @@ export type RequestError = {
   key?: string;
   type?: string;
 }
-
 
 export interface Sessions {
   id: string;
@@ -66,7 +71,7 @@ export interface Content {
   parent_id?: string;
   slug: string;
   title?: string;
-  body: string;
+  body?: string;
   status: ('draft' | 'published');
   source_url: string;
   created_at: Date;
