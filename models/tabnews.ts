@@ -1,4 +1,4 @@
-import { Content, ContentsRequestQuery, RequestError, Sessions, User } from 'interfaces';
+import { Content, ContentsRequestQuery, RequestError, Sessions, Status, User } from 'interfaces';
 import environment from 'infra/environment';
 import fetch from 'node-fetch';
 import { ServiceError } from 'errors';
@@ -15,6 +15,7 @@ const endpoints = {
   user: `${getApiUrl()}/user`,
   users: `${getApiUrl()}/users`,
   contents: `${getApiUrl()}/contents`,
+  status: `${getApiUrl()}/status`,
 }
 
 export function getWebsiteUrl() {
@@ -29,6 +30,25 @@ export function getWebsiteUrl() {
 export function getApiUrl() {
   return getWebsiteUrl() + '/api/v1';
 }
+
+export async function getStatus() {
+  const response = await fetch(endpoints.status, {
+    headers: getHeaders()
+  });
+
+  if (response.status === 404) {
+    throw new ServiceError({
+      action: 'Tente novamente mais tarde.',
+      log: false,
+    });
+  }
+
+  const responseBody = await response.json() as Status;
+
+  return 'error_id' in responseBody
+    ? { error: responseBody as RequestError }
+    : { data: responseBody };
+};
 
 export async function createSession({ email, password }) {
   const response = await fetch(endpoints.sessions, {
@@ -179,9 +199,10 @@ export async function getContentChildren(ownerUsername: string, slug: string) {
 
 
 export default {
+  createSession,
   getApiUrl,
   getWebsiteUrl,
-  createSession,
+  getStatus,
   getUserBySessionToken,
   getUserByUsername,
   getContentsByUser,
