@@ -1,4 +1,4 @@
-import { Content, RequestError, Sessions, User } from 'interfaces';
+import { Content, ContentsRequestQuery, RequestError, Sessions, User } from 'interfaces';
 import environment from 'infra/environment';
 import fetch from 'node-fetch';
 import { ServiceError } from 'errors';
@@ -104,7 +104,7 @@ export async function getContentsByUser(user: User) {
       action: 'Tente novamente mais tarde.',
       log: false,
     });
-  }
+  };
 
   const responseBody = await response.json() as Content[];
 
@@ -113,6 +113,51 @@ export async function getContentsByUser(user: User) {
     : { data: responseBody };
 };
 
+export async function getContents(query: ContentsRequestQuery = {
+  page: 1,
+  per_page: 30,
+  strategy: 'relevant'
+}) {
+  const stringQueries = Object.entries(query)
+    .map(([key, value]) => `${key}=${value}`);
+
+  const response = await fetch(endpoints.contents + `?${stringQueries.join('&')}`, {
+    headers: getHeaders()
+  });
+
+  if (response.status === 404) {
+    throw new ServiceError({
+      action: 'Tente novamente mais tarde.',
+      log: false,
+    });
+  };
+
+  const responseBody = await response.json() as Content[];
+
+  return 'error_id' in responseBody
+    ? { error: responseBody as RequestError }
+    : { data: responseBody };
+};
+
+export async function getContentBySlug(ownerUsername: string, slug: string) {
+  const response = await fetch(`${endpoints.contents}/${ownerUsername}/${slug}`, {
+    headers: getHeaders(),
+  });
+
+  if (response.status === 404) {
+    throw new ServiceError({
+      action: 'Tente novamente mais tarde.',
+      log: false,
+    });
+  };
+
+  const responseBody = await response.json() as Content;
+
+  return 'error_id' in responseBody
+    ? { error: responseBody as RequestError }
+    : { data: responseBody };
+}
+
 export default {
   getApiUrl,
   getWebsiteUrl,
@@ -120,4 +165,6 @@ export default {
   getUserBySessionToken,
   getUserByUsername,
   getContentsByUser,
+  getContents,
+  getContentBySlug,
 }
