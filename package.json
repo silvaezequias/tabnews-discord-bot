@@ -2,10 +2,10 @@
   "name": "tabnews-discord-bot",
   "version": "0.0.15",
   "description": "Uma aplicação Discord para interagir com a API do TabNews",
-  "main": "src/index.ts",
+  "main": "index.ts",
   "scripts": {
-    "start": "npx tsx src/index.ts",
-    "dev": "nodemon --exec \"tsx src/index.ts\" -e ts",
+    "start": "npx tsx index.ts",
+    "dev": "nodemon --exec \"tsx index.ts\" -e ts",
     "prisma:push": "npx prisma db push",
     "prisma:seed": "npx prisma db seed",
     "prisma:studio": "npx prisma studio",
