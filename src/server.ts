@@ -4,10 +4,10 @@ import { config } from 'dotenv';
 
 config();
 
-const express_app = Express();
-const http_server = createServer(express_app);
+const expressApp = Express();
+const httpServer = createServer(expressApp);
 
-express_app.get('/*', (req, res) => {
+expressApp.get('/*', (req, res) => {
   res.status(200).json({
     status: 200,
     message: 'OK',
@@ -15,7 +15,7 @@ express_app.get('/*', (req, res) => {
 });
 
 function init(): void {
-  http_server.listen(process.env.PORT, () => {
+  httpServer.listen(process.env.PORT, () => {
     console.log(`[HTTP] Servidor conectado na porta ${process.env.PORT}`);
   });
 }
