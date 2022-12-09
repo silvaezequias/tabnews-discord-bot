@@ -4,6 +4,7 @@ import {
   ApplicationCommandOptionType,
 } from 'discord.js';
 import { Command } from 'interfaces';
+import format from 'models/format';
 
 export default {
   data: {
@@ -26,20 +27,16 @@ export default {
     var permissions = member.permissions.toArray() as string[]
     permissions.splice(14, 0, `\`+${permissions.length - 15}\`.`);
 
-    function formatDate(date: Date): `<t:${number}:f>` {
-      return `<t:${Math.round((new Date(date)).getTime() / 1000)}:f>`
-    }
-
     const fields: APIEmbedField[] = [];
 
     fields.push({
       name: 'Entrou', inline: true,
-      value: formatDate(member.joinedAt),
+      value: format.date(member.joinedAt),
     });
 
     fields.push({
       name: 'Registrou', inline: true,
-      value: formatDate(member.user.createdAt),
+      value: format.date(member.user.createdAt),
     });
 
     roles.length && fields.push({
