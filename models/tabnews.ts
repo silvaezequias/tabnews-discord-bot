@@ -158,6 +158,26 @@ export async function getContentBySlug(ownerUsername: string, slug: string) {
     : { data: responseBody };
 }
 
+export async function getContentChildren(ownerUsername: string, slug: string) {
+  const response = await fetch(`${endpoints.contents}/${ownerUsername}/${slug}/children`, {
+    headers: getHeaders(),
+  });
+
+  if (response.status === 404) {
+    throw new ServiceError({
+      action: 'Tente novamente mais tarde.',
+      log: false,
+    });
+  };
+
+  const responseBody = await response.json() as Content;
+
+  return 'error_id' in responseBody
+    ? { error: responseBody as RequestError }
+    : { data: responseBody };
+};
+
+
 export default {
   getApiUrl,
   getWebsiteUrl,
@@ -167,4 +187,5 @@ export default {
   getContentsByUser,
   getContents,
   getContentBySlug,
+  getContentChildren,
 }

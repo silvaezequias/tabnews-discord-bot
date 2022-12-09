@@ -3,7 +3,6 @@ dotenv.config();
 
 export default {
   token: process.env.TOKEN,
-  prefix: '!',
   default: {
     guildId: '997643740581736530',
   },

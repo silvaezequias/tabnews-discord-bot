@@ -1,7 +1,6 @@
 import database from 'infra/database';
 import { User } from '@prisma/client';
-import { Sessions } from 'interfaces';
-import { UserSchema } from 'interfaces';
+import { Sessions, UserSchema } from 'interfaces';
 
 async function insertSession(userId: string, session: Sessions) {
   var dataObject: UserSchema = {

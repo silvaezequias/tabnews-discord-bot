@@ -15,7 +15,7 @@ export default class ExtendedClient extends Client {
     glob.sync('**/commands/**/**.public.ts')
       .forEach(commandPath => {
         const { default: command } = require(path
-          .join(__dirname, '../../', commandPath),
+          .join(__dirname, commandPath),
         );
         this.commands.set(command.data.name, command);
       });
@@ -23,7 +23,7 @@ export default class ExtendedClient extends Client {
     glob.sync('**/events/**/**.public.ts')
       .forEach(eventPath => {
         const { default: event } = require(path
-          .join(__dirname, '../../', eventPath),
+          .join(__dirname, eventPath),
         );
 
         this.on(event.name, (...args) => {
