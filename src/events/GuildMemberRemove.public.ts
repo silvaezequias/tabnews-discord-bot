@@ -3,7 +3,7 @@ import { Event } from "interfaces";
 import ExtendedClient from "client";
 
 export default {
-  name: 'guildMemberAdd',
+  name: 'guildMemberRemove',
   run: (client: ExtendedClient, member: GuildMember) => {
     const message_embed = new EmbedBuilder()
       .setTitle('Até Mais!!')
