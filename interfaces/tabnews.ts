@@ -65,6 +65,35 @@ export interface Sessions {
   updated_at: Date;
 }
 
+export interface Status {
+  updated_at: Date;
+  dependecies: {
+    database: {
+      status: string;
+      max_connections: number;
+      opened_connections: number;
+      latency: {
+        first_query: number;
+        second_query: number;
+        third_query: number;
+      },
+      version: string;
+    }
+  },
+  webserver: {
+    status: string;
+    provider: string;
+    environment: string;
+    aws_region: string;
+    vercel_region: string;
+    timezone: string;
+    last_commit_author: string;
+    last_commit_message: string;
+    last_commit_message_sha: string;
+    version: string;
+  }
+}
+
 export interface Content {
   id: string;
   owner_id: string;
