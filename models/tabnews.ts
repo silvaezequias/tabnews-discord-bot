@@ -29,8 +29,7 @@ export function getWebsiteUrl() {
   if (environment.isProduction()) {
     return 'https://tabnews.com.br';
   } else {
-    return 'https://tabnews.com.br';
-    // Nenhum hambiente de homologação está dispónível no momento
+    return 'https://tabnews-pggcz5y8n-tabnews.vercel.app/';
   }
 }
 
