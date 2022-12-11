@@ -14,7 +14,7 @@ on:
     branches: ['master']
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: ['master']
+    branches: ['*']
   schedule:
     - cron: '15 18 * * 0'
 
@@ -29,12 +29,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Install ESLint
-        run: |
-          npm install eslint@8.10.0
-          npm install @microsoft/eslint-formatter-sarif@2.1.7
-
+        
       - name: Run ESLint
         run: npm run lint:fix
         continue-on-error: true
