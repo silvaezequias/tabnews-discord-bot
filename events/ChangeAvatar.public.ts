@@ -1,3 +1,4 @@
+/* eslint-disable no-constant-condition */
 import { Event } from 'interfaces';
 import { readFileSync, PathLike } from 'fs';
 import environment from 'infra/environment';
@@ -15,19 +16,19 @@ export default {
       '../assets/normal-face.png',
       '../assets/sleepy-face.png',
       '../assets/unamused-face.png',
-      '../assets/woozy-face.png',
+      '../assets/woozy-face.png'
     ];
 
     async function setNewAvatar(path: PathLike) {
       const avatarBuff = readFileSync(path);
       await client.user.setAvatar(avatarBuff);
-    };
+    }
 
     setInterval(async function () {
-      var randomNumber = Math.round(Math.random() * avatarPaths.length);
-      var randomAvatarPath = avatarPaths[randomNumber];
+      const randomNumber = Math.round(Math.random() * avatarPaths.length);
+      const randomAvatarPath = avatarPaths[randomNumber];
 
       await setNewAvatar(randomAvatarPath);
-    }, ((60 * 1000) * 60) * 2); // A cada 2 horas
+    }, 60 * 1000 * 60 * 2); // A cada 2 horas
   }
-} as Event
+} as Event;

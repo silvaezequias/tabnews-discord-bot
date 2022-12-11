@@ -10,6 +10,6 @@ export interface UserSchema {
       createdAt: Date;
       updatedAt: Date;
       expiresAt: Date;
-    }
-  }
+    };
+  };
 }

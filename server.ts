@@ -10,7 +10,7 @@ const httpServer = createServer(expressApp);
 expressApp.get('/*', (req, res) => {
   res.status(200).json({
     status: 200,
-    message: 'OK',
+    message: 'OK'
   });
 });
 
@@ -21,5 +21,5 @@ function init(): void {
 }
 
 export default {
-  init,
-}
+  init
+};

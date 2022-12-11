@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 async function main() {
   await prisma.user.create({
-    data: { userId: '367725991994458115' },
+    data: { userId: '367725991994458115' }
   });
 }
 

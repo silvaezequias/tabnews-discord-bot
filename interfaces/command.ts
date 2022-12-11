@@ -7,6 +7,6 @@ export interface Command {
     name: string;
     description: string;
     type?: number;
-    options?: ApplicationCommandOption[]
-  }
+    options?: ApplicationCommandOption[];
+  };
 }

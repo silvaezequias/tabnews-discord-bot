@@ -4,7 +4,11 @@ import ExtendedClient from 'client';
 import logger from 'infra/logger';
 import settings from 'settings';
 
-export function onErrorHandler(error: BaseError, interaction: CommandInteraction, client: ExtendedClient) {
+export function onErrorHandler(
+  error: BaseError,
+  interaction: CommandInteraction,
+  client: ExtendedClient
+) {
   const errorObject = new InternalServerError({
     requestId: interaction.user.id,
     message: error.message,
@@ -16,7 +20,7 @@ export function onErrorHandler(error: BaseError, interaction: CommandInteraction
     errorLocationCode: error.errorLocationCode,
     key: error.key,
     statusCode: error.statusCode,
-    type: error.type,
+    type: error.type
   });
 
   const errorEmbed = new EmbedBuilder()
@@ -26,16 +30,18 @@ export function onErrorHandler(error: BaseError, interaction: CommandInteraction
     )
     .setFooter({ text: `ErrorId: ${errorObject.errorId}` })
     .setTimestamp(new Date())
-    .setColor(0xFF5353);
+    .setColor(0xff5353);
 
   (error.log ?? settings.log.enabled) && logger(errorObject, client);
 
-  interaction.editReply({
-    embeds: [errorEmbed],
-  }).catch(err => {
-    interaction.reply({
-      embeds: [errorEmbed],
-      ephemeral: true,
+  interaction
+    .editReply({
+      embeds: [errorEmbed]
+    })
+    .catch(() => {
+      interaction.reply({
+        embeds: [errorEmbed],
+        ephemeral: true
+      });
     });
-  });
 }

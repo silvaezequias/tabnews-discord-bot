@@ -4,7 +4,7 @@ dotenv.config();
 export default {
   token: process.env.TOKEN,
   default: {
-    guildId: '997643740581736530',
+    guildId: '997643740581736530'
   },
   log: {
     enabled: true,
@@ -20,4 +20,4 @@ export default {
       }
     }
   }
-}; 
+};

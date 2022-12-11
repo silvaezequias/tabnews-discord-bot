@@ -19,13 +19,13 @@ export default function logger(error: BaseError, client: ExtendedClient) {
       requestId: error.requestId,
       statusCode: error.statusCode,
       type: error.type,
-      log: error.log,
+      log: error.log
     };
 
     const logContent = JSON.stringify(errorObject, null, 2);
     const contentBuff = Buffer.from(logContent);
 
-    var messageAttachment = new AttachmentBuilder(contentBuff, {
+    const messageAttachment = new AttachmentBuilder(contentBuff, {
       name: `${errorObject.errorId}.json`
     });
 
@@ -34,9 +34,9 @@ export default function logger(error: BaseError, client: ExtendedClient) {
     if (logChannel?.isTextBased()) {
       (<TextChannel>logChannel).send({
         content: `**${errorObject.errorId}**`,
-        files: [messageAttachment],
+        files: [messageAttachment]
       });
-    };
+    }
   } else {
     console.log(error);
   }

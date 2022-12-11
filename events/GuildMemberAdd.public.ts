@@ -1,13 +1,15 @@
-import { GuildMember, EmbedBuilder, TextChannel } from "discord.js";
-import { Event } from "interfaces";
-import ExtendedClient from "client";
+import { GuildMember, EmbedBuilder, TextChannel } from 'discord.js';
+import { Event } from 'interfaces';
+import ExtendedClient from 'client';
 
 export default {
   name: 'guildMemberAdd',
   run: (client: ExtendedClient, member: GuildMember) => {
     const messageEmbed = new EmbedBuilder()
       .setTitle('Boas Vindas!!')
-      .setDescription(`Olá **${member.user.username}**, seja bem-vindo(a). Estamos contentes por você ter se juntado à nós.`)
+      .setDescription(
+        `Olá **${member.user.username}**, seja bem-vindo(a). Estamos contentes por você ter se juntado à nós.`
+      )
       .setImage('https://i.imgur.com/UnzjJG1.png')
       .setTimestamp(new Date())
       .setColor('#2DCF46');
@@ -23,4 +25,4 @@ export default {
       });
     }
   }
-} as Event
+} as Event;

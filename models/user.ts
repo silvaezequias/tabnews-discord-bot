@@ -11,9 +11,9 @@ async function insertSession(userId: string, session: Sessions) {
         token: session.token,
         updatedAt: session.updated_at,
         expiresAt: session.expires_at,
-        createdAt: session.created_at,
+        createdAt: session.created_at
       }
-    },
+    }
   };
 
   return await database.user.upsert({
@@ -43,11 +43,11 @@ async function update(userId: string, userObject: UserSchema) {
     data: userObject
   });
   return updatedUser;
-};
+}
 
 export default {
   insertSession,
   getOneById,
   create,
-  update,
-}
+  update
+};
