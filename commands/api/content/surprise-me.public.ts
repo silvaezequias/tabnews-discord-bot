@@ -63,7 +63,7 @@ export default {
     embedFields.push({
       inline: true,
       name: 'Autor',
-      value: `[${owner_username}](${contentOwnerUrl})`
+      value: `[**${owner_username}**](${contentOwnerUrl})`
     });
 
     embedFields.push({
@@ -86,15 +86,16 @@ export default {
       }`;
       const firstCommentUrl = `${firstCommentOwnerUrl}/${firstComment.slug}`;
 
-      firstComment.body =
-        firstComment.body.substring(0, 900) +
-        `... [Ler Mais](${firstCommentUrl})`;
+      firstComment.body.length >= 900 &&
+        (firstComment.body =
+          firstComment.body.substring(0, 900) +
+          `... [Ler Mais](${firstCommentUrl})`);
 
       embedFields.push({
         name: `Comentário em destaque • ${firstComment.tabcoins} tabcoin${
           firstComment.tabcoins > 1 ? 's' : ''
         }`,
-        value: `\`${firstComment.owner_username}\` - ${firstComment.body}`,
+        value: `[_@${firstComment.owner_username}_](${firstCommentOwnerUrl}) • ${firstComment.body}`,
         inline: false
       });
     }
