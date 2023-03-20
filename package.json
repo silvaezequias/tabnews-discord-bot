@@ -32,7 +32,7 @@
     "glob": "^8.1.0",
     "moment": "^2.29.4",
     "node-fetch": "^3.3.0",
-    "tsx": "^3.12.2",
+    "tsx": "^3.12.6",
     "wait": "^0.4.2"
   },
   "devDependencies": {
