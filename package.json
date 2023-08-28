@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/ezequiaslopesdasilva/tabnews-discord-bot#readme",
   "dependencies": {
-    "@prisma/client": "^4.9.0",
+    "@prisma/client": "^5.2.0",
     "cuid": "^3.0.0",
     "discord.js": "^14.7.1",
     "dotenv": "^16.3.1",
